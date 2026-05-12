@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/GOVARDHAN9381/ci-cd-pipeline-exp.git'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t flask-cicd-app .'
